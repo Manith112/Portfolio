@@ -30,6 +30,8 @@ header {
 }
 header h2 {
   color: #FFFFFF;
+  position: relative;
+  z-index: 100;
 }
 header ul {
   display: flex;
@@ -177,7 +179,7 @@ header ul {
   position: absolute;
   display: flex;
   flex-direction: column;
-  top: 40%;
+  top: 30%;
   text-align: center;
   left: 50%;
   transform: translate(-50%, -50%);
@@ -193,11 +195,34 @@ header ul {
   color: #FFFFFF;
   background: none;
   border: none;
-  border-bottom: 1px solid #4EE1A0;
+  border-bottom: 2px solid #4EE1A0;
   font-family: "myfont";
   text-decoration: none;
 }
 .showroom .projects .buttons span a:hover {
+  color: #4EE1A0;
+  transition: 0.2s ease;
+  cursor: pointer;
+}
+.showroom .projects .tablet {
+  margin-bottom: 30px;
+}
+.showroom .projects .tablet span {
+  padding: 30px 0;
+  margin-right: 20px;
+}
+.showroom .projects .tablet span a {
+  padding: 10px 0;
+  text-transform: uppercase;
+  font-weight: bold;
+  color: #FFFFFF;
+  background: none;
+  border: none;
+  border-bottom: 1px solid #4EE1A0;
+  font-family: "myfont";
+  text-decoration: none;
+}
+.showroom .projects .tablet span a:hover {
   color: #4EE1A0;
   transition: 0.2s ease;
   cursor: pointer;
@@ -376,10 +401,13 @@ footer .ring3 {
   }
   .name .circle {
     right: 0;
-    bottom: -60px;
+    bottom: 100px;
   }
   .subject {
     margin: 200px 30px 100px 30px;
+  }
+  .subject nav {
+    grid-template-columns: repeat(2, 1fr);
   }
   footer {
     padding: 40px 30px;
@@ -400,10 +428,69 @@ footer .ring3 {
     margin: 0 auto;
   }
   footer .wrap form {
-    width: 70%;
+    width: 100%;
   }
-  footer .wrap form p {
-    top: 20%;
+  footer .wrap form div p {
+    width: 100%;
+    top: 70px;
+  }
+}
+@media (max-width: 768px) {
+  header {
+    flex-direction: column;
+    align-items: center;
+  }
+  .name {
+    align-items: center;
+    text-align: center;
+    margin-top: 60px;
+  }
+  .name h2 {
+    font-size: 36px;
+    width: 100%;
+  }
+  .name .image {
+    position: relative;
+    width: 365px;
+    height: 580px;
+    z-index: 0;
+  }
+  .name p {
+    width: 100%;
+  }
+  .subject {
+    margin-top: 100px;
+  }
+  footer nav {
+    flex-direction: column;
+    align-items: center;
+  }
+  footer ul {
+    margin: 0;
+  }
+}
+@media (max-width: 580px) {
+  .project h1 {
+    font-size: 32px;
+  }
+  .showroom {
+    grid-template-columns: repeat(1, 1fr);
+  }
+  .subject {
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+  .subject nav {
+    grid-template-columns: repeat(1, 1fr);
+  }
+  .name .image {
+    position: relative;
+    width: 70%;
+    height: 60%;
+  }
+  footer .wrap div p {
+    width: 100%;
   }
 }
 
